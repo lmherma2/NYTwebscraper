@@ -16,24 +16,24 @@ export default {
     return axios.get(url);
   },
 
-  // Deletes the Article with the given id
-  deleteArticle: function(id) {
-    return axios.delete("/api/Articles", id);
-  },
-  // Saves a Article to the database
-  saveArticle: function(Article) {
-     return axios.post("/api/Articles", Article);
-  },
-  getArticlesFromDatabase: function(){
-    console.log("Find all get");
-    console.log(axios.get("/api/Articles"))
-  return axios.get("/api/Articles").then(res => console.log(res.data))
-  },
+  // // Deletes the Article with the given id
+  // deleteArticle: function(id) {
+  //   return axios.delete("/api/Articles", id);
+  // },
+  // // Saves a Article to the database
+  // saveArticle: function(Article) {
+  //    return axios.post("/api/Articles", Article);
+  // },
+  // getArticlesFromDatabase: function(){
+  //   console.log("Find all get");
+  //   console.log(axios.get("/api/Articles"))
+  // return axios.get("/api/Articles").then(res => console.log(res.data))
+  // },
 
-  getArticlesFromDatabaseWithId: function(id){
-    console.log("Find with Id");
-    console.log(axios.get("/api/Articles/"+ id))
-  return axios.get("/api/Articles/"+ id);
+  // getArticlesFromDatabaseWithId: function(id){
+  //   console.log("Find with Id");
+  //   console.log(axios.get("/api/Articles/"+ id))
+  // return axios.get("/api/Articles/"+ id);
 
-  }
+  // }
 };
