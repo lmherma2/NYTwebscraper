@@ -26,17 +26,17 @@ class Article extends Component {
         this.setState({ Article: res.data.response.docs})
       )
       .catch(err => console.log(err));
-    API.getArticlesFromDatabase()
-        .then(res => 
-         console.log("other state")
-        )
-      .then(res =>
-        this.setState({OtherState: this.state.OtherState.push(res.data)})
-      )
-      .then(res => 
-        console.log(this.state.OtherState)
-      )
-      .catch(err => console.log(err))
+    // API.getArticlesFromDatabase()
+    //     .then(res => 
+    //      console.log("other state")
+    //     )
+    //   .then(res =>
+    //     this.setState({OtherState: this.state.OtherState.push(res.data)})
+    //   )
+    //   .then(res => 
+    //     console.log(this.state.OtherState)
+    //   )
+    //   .catch(err => console.log(err))
   };
 
   deleteArticle = id => {
@@ -44,9 +44,9 @@ class Article extends Component {
       this.state.OtherState = [];
     }
     this.state.OtherState.splice(id, id);
-    API.deleteArticle(id)
-      .then(res => this.loadArticle())
-      .catch(err => console.log(err));
+    // API.deleteArticle(id)
+    //   .then(res => this.loadArticle())
+    //   .catch(err => console.log(err));
   };
   AddArticle = id => {
     console.log(id)
