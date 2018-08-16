@@ -9,9 +9,19 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+try {
+  app.get('*', (req, res) => {
+    if (process.env.NODE_ENV === 'production') {
+      res.sendFile(__dirname + '/client/build/index.html');
+    } else {
+      res.sendFile(__dirname + '/../client/public/index.html');
+    }
+  });
+  
+} catch (err) {
+  console.log(`Error: ${err.message}`);
 }
+
 // Add routes, both API and view
 app.use(routes);
 
