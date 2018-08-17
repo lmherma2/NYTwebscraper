@@ -17,7 +17,7 @@ try {
       res.sendFile(__dirname + '/../client/public/index.html');
     }
   });
-  
+
 } catch (err) {
   console.log(`Error: ${err.message}`);
 }
@@ -29,6 +29,6 @@ app.use(routes);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nytreact");
 
 // Start the API server
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
